@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 80" fill="none" class="modoria-logo-svg">
+  <defs>
+    <linearGradient id="modoriaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE588" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#A27D16" />
+    </linearGradient>
+  </defs>
+  <!-- M -->
+  <path d="M15 65V15L38 42L61 15V65H49V33L38 47L27 33V65H15Z" fill="currentColor"/>
+  <!-- O with Golden Arch / Dome Symbol -->
+  <g transform="translate(85, 15)">
+    <path d="M35 0C15.67 0 0 15.67 0 35H70C70 15.67 54.33 0 35 0Z" fill="url(#modoriaGold)"/>
+    <path d="M35 14L48 27H22L35 14Z" fill="#050505"/>
+    <path d="M0 41C0 60.33 15.67 76 35 76C54.33 76 70 60.33 70 41H58C58 53.7 47.7 64 35 64C22.3 64 12 53.7 12 41H0Z" fill="currentColor"/>
+  </g>
+  <!-- D -->
+  <path d="M185 15H215C234.33 15 250 30.67 250 50C250 69.33 234.33 85 215 85H185V15ZM197 27V73H215C227.7 73 238 62.7 238 50C238 37.3 227.7 27 215 27H197Z" transform="translate(0, -10)" fill="currentColor"/>
+  <!-- O -->
+  <path d="M300 40C300 23.43 313.43 10 330 10C346.57 10 360 23.43 360 40C360 56.57 346.57 70 330 70C313.43 70 300 56.57 300 40ZM312 40C312 49.94 320.06 58 330 58C339.94 58 348 49.94 348 40C348 30.06 339.94 22 330 22C320.06 22 312 30.06 312 40Z" fill="currentColor"/>
+  <!-- R -->
+  <path d="M385 65V15H415C428.81 15 440 26.19 440 40C440 49.33 434.88 57.46 427.32 61.68L442 85H428L414.5 65H397V85H385V65ZM397 27V53H415C422.18 53 428 47.18 428 40C428 32.82 422.18 27 415 27H397Z" transform="translate(0, -10)" fill="currentColor"/>
+  <!-- I -->
+  <path d="M465 15H477V65H465V15Z" fill="currentColor"/>
+  <!-- A -->
+  <path d="M515 15L540 65H526L521 54H502L497 65H483L508 15H515ZM511.5 32L506 43H517L511.5 32Z" transform="translate(-20, 0)" fill="currentColor"/>
+</svg>
