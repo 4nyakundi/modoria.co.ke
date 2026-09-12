@@ -146,7 +146,7 @@ img {
 }
 
 .logo-link svg, .logo-link img {
-  height: 36px;
+  height: 32px; width: auto; object-fit: contain; image-rendering: -webkit-optimize-contrast;
   width: auto;
   color: var(--black);
 }
@@ -1886,4 +1886,962 @@ footer.editorial-footer-elevated {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: #555555;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   COMPREHENSIVE MOBILE VIEWPORT OPTIMIZATIONS & PROPORTIONS
+   ══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* ─── Topbar & Header ─── */
+  .topbar {
+    padding: 10px 16px !important;
+  }
+
+  .logo-link img {
+    height: 24px !important;
+  }
+
+  .btn-concierge-quick {
+    padding: 6px 12px !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  .btn-concierge-quick span {
+    display: none; /* Hide full phone text on small mobile, show phone icon + WA */
+  }
+
+  .btn-concierge-quick::after {
+    content: 'CHAT';
+  }
+
+  .menu-toggle {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  /* ─── Fullscreen Observer Slider (Home Mobile Proportions) ─── */
+  .obs-section .bg {
+    padding: 0 16px !important;
+    align-items: center !important;
+  }
+
+  .slide-content-wrap {
+    padding-top: 70px !important;
+    gap: 18px !important;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide-eyebrow {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.18em !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-heading {
+    font-size: clamp(1.6rem, 7.5vw, 2.4rem) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 12px !important;
+  }
+
+  .slide-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 18px !important;
+  }
+
+  .slide-actions {
+    gap: 10px !important;
+  }
+
+  .btn-gold {
+    padding: 11px 22px !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .btn-outline {
+    padding: 11px 18px !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* Scaled Down Hero Emblem for Mobile */
+  .hero-emblem-wrap {
+    width: 160px !important;
+    height: 160px !important;
+    margin: 10px auto !important;
+  }
+
+  .hero-emblem-center {
+    width: 105px !important;
+    height: 105px !important;
+    padding: 8px !important;
+  }
+
+  .hero-emblem-center .logo-icon {
+    width: 70px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .hero-emblem-center span {
+    font-size: 0.52rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  /* Slide 3D Preview Cards on Mobile */
+  .slide-visual-card {
+    border-radius: 14px !important;
+    max-height: 190px !important;
+  }
+
+  .slide-visual-card img {
+    max-height: 190px !important;
+    object-fit: cover !important;
+  }
+
+  .visual-badge {
+    top: 10px !important;
+    left: 10px !important;
+    font-size: 0.6rem !important;
+    padding: 4px 8px !important;
+  }
+
+  /* Slide Controls */
+  .slide-nav-controls {
+    right: 12px !important;
+    gap: 8px !important;
+  }
+
+  .slide-dot {
+    width: 7px !important;
+    height: 7px !important;
+  }
+
+  .slide-bottom-bar {
+    bottom: 12px !important;
+    left: 16px !important;
+    right: 16px !important;
+  }
+
+  .slide-index-counter {
+    font-size: 0.72rem !important;
+  }
+
+  .slide-scroll-hint {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  /* ─── Navigation Drawer on Mobile ─── */
+  .nav {
+    padding: 0.5rem !important;
+    gap: 0.4rem !important;
+  }
+
+  .nav-top {
+    padding: 24px 18px 14px !important;
+  }
+
+  .nav-link {
+    font-size: 1.25rem !important;
+    padding: 8px 0 !important;
+  }
+
+  .nav-middle {
+    padding: 14px 16px !important;
+    min-height: auto !important;
+  }
+
+  .nav-middle-title {
+    font-size: 1rem !important;
+  }
+
+  .nav-middle-desc {
+    font-size: 0.72rem !important;
+  }
+
+  .nav-bottom {
+    height: auto !important;
+    padding: 14px 16px !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+  }
+
+  .nav-socials {
+    gap: 12px !important;
+  }
+
+  /* ─── Standard Multi-Page Containers on Mobile ─── */
+  .page-container {
+    padding-top: 85px !important;
+    padding-bottom: 50px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .page-hero {
+    margin-bottom: 36px !important;
+  }
+
+  .page-hero .eyebrow {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.2em !important;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.8rem, 8vw, 2.6rem) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .page-hero p {
+    font-size: 0.92rem !important;
+  }
+
+  /* ─── Services Grid on Mobile ─── */
+  .pillar-section {
+    margin-bottom: 45px !important;
+  }
+
+  .pillar-header {
+    margin-bottom: 18px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .pillar-title {
+    font-size: 1.4rem !important;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .service-card {
+    padding: 20px 18px !important;
+    border-radius: 14px !important;
+  }
+
+  .service-icon {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .service-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .service-desc {
+    font-size: 0.88rem !important;
+    margin-bottom: 16px !important;
+  }
+
+  .service-specs-list {
+    font-size: 0.75rem !important;
+    margin-bottom: 16px !important;
+    gap: 6px !important;
+  }
+
+  .btn-inquire-service {
+    padding: 10px 14px !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* ─── Case Study & Process on Mobile ─── */
+  .case-study-hero {
+    padding: 24px 18px !important;
+    border-radius: 16px !important;
+    gap: 24px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .case-equation-box {
+    padding: 14px !important;
+    border-radius: 12px !important;
+  }
+
+  .step-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 16px !important;
+  }
+
+  .process-step-block {
+    margin-bottom: 45px !important;
+  }
+
+  .mockups-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .mockup-item-card {
+    border-radius: 14px !important;
+  }
+
+  .mockup-item-info {
+    padding: 14px 16px !important;
+  }
+
+  .mockup-item-title {
+    font-size: 1.05rem !important;
+  }
+
+  /* ─── Contact & Concierge on Mobile ─── */
+  .contact-layout {
+    gap: 24px !important;
+  }
+
+  .contact-info-panel, .contact-form-panel {
+    padding: 24px 18px !important;
+    border-radius: 16px !important;
+  }
+
+  .concierge-avatar-box {
+    gap: 14px !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 16px !important;
+  }
+
+  .avatar-emblem {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 1.2rem !important;
+  }
+
+  .contact-detail-row {
+    gap: 12px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .contact-detail-icon {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .contact-detail-val {
+    font-size: 0.95rem !important;
+  }
+
+  /* ─── Elevated Footer on Mobile ─── */
+  footer.editorial-footer-elevated {
+    padding: 40px 14px 24px !important;
+  }
+
+  .footer-hero-marquee {
+    margin-bottom: 30px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .footer-eyebrow {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.15em !important;
+    margin-bottom: 10px !important;
+  }
+
+  .footer-giant-title {
+    font-size: clamp(1.5rem, 6.8vw, 2.4rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .footer-grid {
+    gap: 28px !important;
+    margin-bottom: 36px !important;
+  }
+
+  .footer-heading {
+    font-size: 1rem !important;
+    margin-bottom: 14px !important;
+  }
+
+  .footer-nav-list {
+    gap: 8px !important;
+  }
+
+  .footer-nav-list a {
+    font-size: 0.85rem !important;
+  }
+
+  .footer-concierge-card {
+    padding: 18px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .footer-social-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    padding: 18px 0 !important;
+  }
+
+  .social-pill-group {
+    gap: 8px !important;
+  }
+
+  .social-pill {
+    padding: 6px 12px !important;
+    font-size: 0.72rem !important;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column !important;
+    gap: 8px !important;
+    text-align: center !important;
+    font-size: 0.7rem !important;
+  }
+
+  /* ─── Floating WhatsApp Button on Mobile ─── */
+  .whatsapp-float-btn {
+    width: 50px !important;
+    height: 50px !important;
+    bottom: 18px !important;
+    right: 18px !important;
+  }
+
+  .whatsapp-float-btn svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .wa-modal-backdrop {
+    padding: 12px !important;
+    align-items: flex-end !important;
+  }
+
+  .wa-concierge-card {
+    border-radius: 16px !important;
+  }
+
+  .wa-card-header {
+    padding: 14px 18px !important;
+  }
+
+  .wa-card-body {
+    padding: 18px !important;
+  }
+}
+
+
+/* ─── SLEEK SOCIAL MEDIA ICON BUTTONS (REPLACING TEXT) ─── */
+.nav-socials-icons {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icon-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-icon-circle:hover {
+  background: var(--gold-gradient);
+  color: #000000;
+  border-color: var(--gold);
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+}
+
+.social-icons-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #080808;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-icon-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 310;
+}
+
+.logo-link img {
+  height: 28px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  transition: transform 0.25s ease;
+}
+
+.logo-link:hover img {
+  transform: scale(1.02);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   REFINED SLEEK MOBILE PROPORTIONS & DE-BULKED PLACEHOLDERS
+   ══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* ─── Topbar & Header ─── */
+  .topbar {
+    padding: 8px 14px !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+    backdrop-filter: blur(14px) !important;
+  }
+
+  .logo-link img {
+    height: 20px !important;
+    max-width: 130px !important;
+  }
+
+  .btn-concierge-quick {
+    padding: 5px 10px !important;
+    font-size: 0.65rem !important;
+    letter-spacing: 0.04em !important;
+    gap: 5px !important;
+  }
+
+  .btn-concierge-quick svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .menu-toggle {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .menu-toggle svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  /* ─── Main Page Container ─── */
+  .page-container {
+    padding-top: 70px !important;
+    padding-bottom: 40px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* ─── Hero Section on Mobile ─── */
+  .home-hero-section {
+    margin-bottom: 40px !important;
+  }
+
+  .slide-content-wrap {
+    gap: 14px !important;
+    padding-top: 10px !important;
+  }
+
+  .slide-eyebrow {
+    font-size: 0.64rem !important;
+    letter-spacing: 0.16em !important;
+    margin-bottom: 6px !important;
+    gap: 6px !important;
+  }
+
+  .section-heading {
+    font-size: clamp(1.4rem, 6.4vw, 2.1rem) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 10px !important;
+  }
+
+  .slide-desc {
+    font-size: 0.84rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 16px !important;
+    color: #444444 !important;
+  }
+
+  .slide-actions {
+    gap: 8px !important;
+  }
+
+  .btn-gold {
+    padding: 9px 18px !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.06em !important;
+    gap: 6px !important;
+  }
+
+  .btn-outline {
+    padding: 9px 16px !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.06em !important;
+    gap: 6px !important;
+  }
+
+  /* Compact Hero Emblem */
+  .hero-emblem-wrap {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 8px auto !important;
+  }
+
+  .hero-emblem-center {
+    width: 82px !important;
+    height: 82px !important;
+    padding: 6px !important;
+    border-width: 1.5px !important;
+  }
+
+  .hero-emblem-center .logo-icon {
+    width: 54px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .hero-emblem-center span {
+    font-size: 0.48rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* ─── Pillar Sections & Cards ─── */
+  .pillar-section {
+    margin-bottom: 36px !important;
+  }
+
+  .pillar-header {
+    margin-bottom: 14px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .pillar-number {
+    font-size: 0.95rem !important;
+  }
+
+  .pillar-title {
+    font-size: 1.25rem !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .service-card {
+    padding: 16px 14px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
+  }
+
+  .service-card-top {
+    margin-bottom: 12px !important;
+  }
+
+  .service-icon {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 8px !important;
+  }
+
+  .service-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .service-title {
+    font-size: 1.15rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .service-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .service-specs-list {
+    font-size: 0.72rem !important;
+    margin-bottom: 12px !important;
+    padding-top: 10px !important;
+    gap: 4px !important;
+  }
+
+  .btn-inquire-service {
+    padding: 9px 12px !important;
+    font-size: 0.72rem !important;
+    border-radius: 6px !important;
+  }
+
+  /* ─── Case Study Banner & Visual Cards ─── */
+  .case-study-hero {
+    padding: 18px 14px !important;
+    border-radius: 14px !important;
+    gap: 16px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .case-client-tag {
+    font-size: 0.68rem !important;
+    padding: 4px 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .case-study-hero h2, .case-study-hero h3 {
+    font-size: 1.35rem !important;
+    line-height: 1.18 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .slide-visual-card {
+    border-radius: 10px !important;
+    max-height: 165px !important;
+  }
+
+  .slide-visual-card img {
+    max-height: 165px !important;
+    object-fit: cover !important;
+  }
+
+  .visual-badge {
+    top: 8px !important;
+    left: 8px !important;
+    font-size: 0.58rem !important;
+    padding: 3px 7px !important;
+  }
+
+  .case-equation-box {
+    padding: 12px !important;
+    border-radius: 10px !important;
+  }
+
+  /* ─── Mockups Grid on Mobile ─── */
+  .mockups-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 18px !important;
+  }
+
+  .mockup-item-card {
+    border-radius: 12px !important;
+  }
+
+  .mockup-item-card img {
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  .mockup-item-info {
+    padding: 12px 14px !important;
+  }
+
+  .mockup-item-tag {
+    font-size: 0.62rem !important;
+  }
+
+  .mockup-item-title {
+    font-size: 0.98rem !important;
+  }
+
+  /* ─── Contact Panels on Mobile ─── */
+  .contact-layout {
+    gap: 18px !important;
+  }
+
+  .contact-info-panel, .contact-form-panel {
+    padding: 18px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .concierge-avatar-box {
+    gap: 10px !important;
+    margin-bottom: 14px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .avatar-emblem {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.1rem !important;
+  }
+
+  .contact-detail-row {
+    gap: 10px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .contact-detail-icon {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .contact-detail-icon svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .contact-detail-val {
+    font-size: 0.88rem !important;
+  }
+
+  .form-control {
+    padding: 10px 12px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* ─── Elevated Footer on Mobile ─── */
+  footer.editorial-footer-elevated {
+    padding: 32px 12px 20px !important;
+  }
+
+  .footer-hero-marquee {
+    margin-bottom: 24px !important;
+    padding-bottom: 18px !important;
+  }
+
+  .footer-eyebrow {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 8px !important;
+  }
+
+  .footer-giant-title {
+    font-size: clamp(1.3rem, 5.8vw, 1.85rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .footer-col-brand .footer-logo-link img {
+    height: 28px !important;
+  }
+
+  .footer-brand-manifesto {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .footer-grid {
+    gap: 22px !important;
+    margin-bottom: 28px !important;
+  }
+
+  .footer-heading {
+    font-size: 0.95rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .footer-nav-list {
+    gap: 6px !important;
+  }
+
+  .footer-nav-list a {
+    font-size: 0.82rem !important;
+  }
+
+  .footer-concierge-card {
+    padding: 14px 12px !important;
+    border-radius: 12px !important;
+  }
+
+  .concierge-avatar-ring {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1rem !important;
+  }
+
+  .concierge-name {
+    font-size: 1rem !important;
+  }
+
+  .footer-wa-btn {
+    padding: 9px !important;
+    font-size: 0.72rem !important;
+  }
+
+  .footer-social-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 14px 0 !important;
+    margin-bottom: 18px !important;
+  }
+
+  .social-pill-group {
+    gap: 6px !important;
+  }
+
+  .social-pill {
+    padding: 5px 10px !important;
+    font-size: 0.68rem !important;
+  }
+
+  .back-to-top-btn {
+    padding: 6px 14px !important;
+    font-size: 0.68rem !important;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column !important;
+    gap: 6px !important;
+    font-size: 0.68rem !important;
+    text-align: center !important;
+  }
+
+  /* ─── Floating WhatsApp Button on Mobile ─── */
+  .whatsapp-float-btn {
+    width: 46px !important;
+    height: 46px !important;
+    bottom: 14px !important;
+    right: 14px !important;
+  }
+
+  .whatsapp-float-btn svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .wa-modal-backdrop {
+    padding: 8px !important;
+  }
+
+  .wa-concierge-card {
+    border-radius: 14px !important;
+  }
+
+  .wa-card-header {
+    padding: 12px 14px !important;
+  }
+
+  .wa-card-body {
+    padding: 14px !important;
+  }
+
+  .wa-service-pill {
+    font-size: 0.65rem !important;
+    padding: 4px 8px !important;
+    margin-right: 4px !important;
+    margin-bottom: 6px !important;
+  }
 }

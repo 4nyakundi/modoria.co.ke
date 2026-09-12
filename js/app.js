@@ -96,4 +96,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+}
+  // ─── LIVE NAIROBI STUDIO CLOCK ───
+  function updateNairobiClock() {
+    const timeEl = document.getElementById("footerNairobiTime");
+    if (!timeEl) return;
+    try {
+      const now = new Date();
+      const options = { timeZone: 'Africa/Nairobi', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+      const timeStr = new Intl.DateTimeFormat([], options).format(now);
+      timeEl.textContent = `MOMBASA ${timeStr} EAT • NATIONWIDE ACTIVE`;
+    } catch (e) {
+      // fallback
+    }
+  }
+  updateNairobiClock();
+  setInterval(updateNairobiClock, 1000);
+
 });
