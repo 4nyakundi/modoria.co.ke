@@ -1,5 +1,5 @@
 /* MODORIA - HAUTE PRINT, BRAND & MARKETING (LUXURY EDITORIAL WHITE THEME) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
   --black: #080808;
@@ -24,9 +24,11 @@
   --gold-border: rgba(197, 155, 39, 0.35);
   --teal-r3: #026e85;
   --taupe-r3: #6b645a;
-  --font-main: 'Montserrat', 'Outfit', -apple-system, sans-serif;
-  --font-display: 'Outfit', 'Montserrat', sans-serif;
-  --font-mono: 'Space Grotesk', monospace;
+    --font-futura: 'Futura', 'Futura PT', 'Futura-Medium', 'Futura-Bold', 'Futura-Heavy', 'Jost', 'Century Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-main: var(--font-futura);
+  --font-display: 'Futura', 'Futura PT', 'Futura-Bold', 'Futura-Heavy', 'Jost', 'Century Gothic', -apple-system, sans-serif;
+  --font-sans: var(--font-futura);
+  --font-mono: 'Futura', 'Space Grotesk', 'Courier New', monospace;
   --ease-cunty: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -3865,5 +3867,829 @@ footer.editorial-footer-elevated {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
+  }
+}
+
+
+
+/* ══════════════════════════════════════════════════════════════════════
+   CLIENT PORTFOLIO & BRAND LOGO SHOWCASE STYLING
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* Hero Page (Slide 01) Trusted Ticker */
+.hero-trusted-strip {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-trusted-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--gold-dark);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero-trusted-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.trusted-logo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 5px 12px;
+  border-radius: 100px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+}
+
+.trusted-logo-pill:hover {
+  background: #ffffff;
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+}
+
+.trusted-logo-pill img {
+  height: 22px;
+  width: auto;
+  max-width: 40px;
+  object-fit: contain;
+}
+
+.trusted-logo-pill span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Slide 06 (Last Slider) Elevate Your Brand + Client Grid */
+.elevate-slide-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+  width: 100%;
+}
+
+@media(min-width: 1024px) {
+  .elevate-slide-layout {
+    grid-template-columns: 1fr 1.15fr;
+    gap: 40px;
+  }
+}
+
+.elevate-cta-panel {
+  text-align: left;
+}
+
+.clients-portfolio-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid rgba(212, 175, 55, 0.4);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.clients-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.clients-panel-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.clients-panel-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--gold-dark);
+  font-weight: 800;
+  background: rgba(212, 175, 55, 0.12);
+  padding: 3px 8px;
+  border-radius: 100px;
+  border: 1px solid var(--gold-border);
+}
+
+.clients-grid-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media(min-width: 640px) {
+  .clients-grid-showcase {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.client-brand-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.client-brand-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+}
+
+.client-logo-box {
+  height: 48px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-logo-box img {
+  max-height: 44px;
+  max-width: 90%;
+  object-fit: contain;
+}
+
+.client-brand-name {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.2;
+}
+
+.client-brand-category {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: #666;
+}
+
+
+
+/* ══════════════════════════════════════════════════════════════════════
+   BORDERLESS FLOATING LOGOS & INFINITE SMOOTH SCROLLER
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* Floating Levitation Keyframes */
+@keyframes floatLevitate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes infiniteMarqueeLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes infiniteMarqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ─── Slide 01: Hero Floating Borderless Marquee ─── */
+.hero-floating-scroller-wrap {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 680px;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  padding: 12px 0 6px;
+}
+
+.hero-floating-header {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-dark);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-floating-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.4), transparent);
+}
+
+.marquee-track-smooth {
+  display: flex;
+  width: max-content;
+  animation: infiniteMarqueeLeft 28s linear infinite;
+  align-items: center;
+  gap: 36px;
+}
+
+.hero-floating-scroller-wrap:hover .marquee-track-smooth,
+.clients-marquee-container:hover .marquee-track-smooth {
+  animation-play-state: paused;
+}
+
+.floating-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+  animation: floatLevitate 4.5s ease-in-out infinite;
+}
+
+.floating-logo-item:nth-child(even) {
+  animation-duration: 5.2s;
+  animation-delay: -1.8s;
+}
+
+.floating-logo-item:nth-child(3n) {
+  animation-duration: 4.8s;
+  animation-delay: -3.2s;
+}
+
+.floating-logo-item img {
+  height: 38px;
+  width: auto;
+  max-width: 110px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.06));
+  transition: all 0.35s ease;
+}
+
+.floating-logo-item:hover {
+  transform: scale(1.15) translateY(-5px) !important;
+}
+
+.floating-logo-item:hover img {
+  filter: drop-shadow(0 8px 20px rgba(212, 175, 55, 0.55));
+}
+
+/* ─── Slide 06: Ready to Elevate Your Brand + Double Stream Floating Scroller ─── */
+.slide06-elevate-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+  width: 100%;
+}
+
+@media(min-width: 1024px) {
+  .slide06-elevate-container {
+    grid-template-columns: 1.05fr 1.2fr;
+    gap: 48px;
+  }
+}
+
+.slide06-cta-box {
+  text-align: left;
+}
+
+.clients-stream-stage {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 24px;
+  padding: 28px 16px;
+  box-shadow: 0 15px 45px rgba(212, 175, 55, 0.08);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.clients-stream-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.clients-stream-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 900;
+  color: #000;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.clients-stream-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--gold-dark);
+  background: rgba(212, 175, 55, 0.12);
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid var(--gold-border);
+}
+
+/* Stream Row 1 (Leftward Infinite Smooth Glide) */
+.stream-row-1 {
+  display: flex;
+  width: max-content;
+  animation: infiniteMarqueeLeft 30s linear infinite;
+  align-items: center;
+  gap: 40px;
+  padding: 10px 0;
+}
+
+/* Stream Row 2 (Rightward Infinite Smooth Glide) */
+.stream-row-2 {
+  display: flex;
+  width: max-content;
+  animation: infiniteMarqueeRight 32s linear infinite;
+  align-items: center;
+  gap: 40px;
+  padding: 10px 0;
+}
+
+.stream-logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: floatLevitate 5s ease-in-out infinite;
+}
+
+.stream-logo-card:nth-child(even) {
+  animation-duration: 5.6s;
+  animation-delay: -2.2s;
+}
+
+.stream-logo-card:nth-child(3n) {
+  animation-duration: 4.4s;
+  animation-delay: -1.4s;
+}
+
+.stream-logo-card img {
+  height: 48px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+  transition: all 0.35s ease;
+}
+
+.stream-logo-card:hover {
+  transform: scale(1.18) translateY(-6px) !important;
+}
+
+.stream-logo-card:hover img {
+  filter: drop-shadow(0 10px 24px rgba(212, 175, 55, 0.6));
+}
+
+.stream-logo-name {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #333;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.stream-logo-card:hover .stream-logo-name {
+  opacity: 1;
+  color: var(--gold-dark);
+}
+
+@media(max-width: 768px) {
+  .hero-floating-scroller-wrap {
+    margin-top: 18px;
+    padding: 8px 0;
+  }
+  .floating-logo-item img {
+    height: 30px;
+  }
+  .stream-logo-card img {
+    height: 38px;
+  }
+  .clients-stream-stage {
+    padding: 16px 10px;
+    border-radius: 16px;
+  }
+}
+
+
+
+/* ══════════════════════════════════════════════════════════════════════
+   GLOBAL FUTURA BRAND TYPOGRAPHY STANDARD
+   ══════════════════════════════════════════════════════════════════════ */
+*, *::before, *::after {
+  font-family: var(--font-futura);
+}
+
+body, html, h1, h2, h3, h4, h5, h6, p, a, button, input, textarea, select, span, div, li, ul, label {
+  font-family: var(--font-futura);
+}
+
+h1, h2, h3, h4, h5, h6, .section-heading, .footer-headline-huge, .pillar-title, .page-hero h1 {
+  font-family: var(--font-display) !important;
+  letter-spacing: -0.02em;
+}
+
+.topbar-tag, .slide-eyebrow, .matrix-subtag, .telemetry-status, .telemetry-clock, .btn-gold, .btn-outline, .btn-inquire-service, .vip-tag, .legal-tagline {
+  font-family: var(--font-futura);
+  letter-spacing: 0.12em;
+}
+
+
+
+/* ══════════════════════════════════════════════════════════════════════
+   SLIDE 06: FULL-WIDTH EDGE-TO-EDGE TOP FLOATING LOGOS + EVEN CONTENT
+   ══════════════════════════════════════════════════════════════════════ */
+
+.slide06-fullwidth-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  padding-top: 20px;
+}
+
+/* ─── Top Edge-to-Edge Floating Stream (Spans 100% of Screen) ─── */
+.top-edge-to-edge-stream {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 10px 0 24px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.top-edge-to-edge-stream .stream-row-1,
+.top-edge-to-edge-stream .stream-row-2 {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 56px;
+}
+
+.top-edge-to-edge-stream .stream-row-1 {
+  animation: infiniteMarqueeLeft 28s linear infinite;
+}
+
+.top-edge-to-edge-stream .stream-row-2 {
+  animation: infiniteMarqueeRight 32s linear infinite;
+}
+
+.top-edge-to-edge-stream:hover .stream-row-1,
+.top-edge-to-edge-stream:hover .stream-row-2 {
+  animation-play-state: paused;
+}
+
+.bold-floating-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+  animation: floatLevitate 4.8s ease-in-out infinite;
+}
+
+.bold-floating-logo:nth-child(even) {
+  animation-duration: 5.4s;
+  animation-delay: -2s;
+}
+
+.bold-floating-logo:nth-child(3n) {
+  animation-duration: 4.6s;
+  animation-delay: -1.2s;
+}
+
+.bold-floating-logo img {
+  height: 68px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  background: transparent !important;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.08));
+  transition: all 0.35s ease;
+}
+
+.bold-floating-logo:hover {
+  transform: scale(1.18) translateY(-6px) !important;
+}
+
+.bold-floating-logo:hover img {
+  filter: drop-shadow(0 12px 28px rgba(212, 175, 55, 0.65));
+}
+
+/* ─── Downward Content (Evenly Distributed on Screen) ─── */
+.slide06-centered-content {
+  text-align: center;
+  max-width: 920px;
+  width: 100%;
+  margin: 10px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide06-centered-content .slide-eyebrow {
+  margin-bottom: 12px;
+}
+
+.slide06-centered-content .section-heading {
+  font-size: clamp(2.2rem, 5.2vw, 4.4rem);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.slide06-centered-content .slide-desc {
+  font-size: clamp(0.95rem, 1.25vw, 1.15rem);
+  max-width: 720px;
+  margin: 0 auto 28px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.slide06-centered-content .slide-actions {
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.slide06-trust-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #555;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.slide06-trust-tags span {
+  color: var(--gold-dark);
+}
+
+@media(max-width: 768px) {
+  .bold-floating-logo img {
+    height: 44px;
+    max-width: 110px;
+  }
+  .top-edge-to-edge-stream {
+    padding: 6px 0 16px;
+    gap: 10px;
+  }
+  .slide06-centered-content .section-heading {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    margin-bottom: 12px;
+  }
+  .slide06-centered-content .slide-desc {
+    font-size: 0.88rem;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+/* ══════════════════════════════════════════════════════════════════════
+   SLIDE 06: SINGLE-LINE BIG, BOLD & BEAUTIFUL LOGO STREAM (PERFECT BALANCE)
+   ══════════════════════════════════════════════════════════════════════ */
+
+.slide06-fullwidth-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  min-height: calc(100vh - 160px);
+  padding: 85px 0 30px;
+  box-sizing: border-box;
+}
+
+/* ─── Single Line Big Bold Floating Stream (Spans 100% Screen Width) ─── */
+.top-edge-to-edge-stream {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 10px 0 20px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  display: flex;
+  align-items: center;
+}
+
+.top-edge-to-edge-stream .stream-single-row {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 75px;
+  animation: infiniteMarqueeLeft 35s linear infinite;
+  padding: 6px 0;
+}
+
+.top-edge-to-edge-stream:hover .stream-single-row {
+  animation-play-state: paused;
+}
+
+.bold-floating-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+  animation: floatLevitate 5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.bold-floating-logo:nth-child(even) {
+  animation-duration: 5.6s;
+  animation-delay: -2s;
+}
+
+.bold-floating-logo:nth-child(3n) {
+  animation-duration: 4.8s;
+  animation-delay: -1.2s;
+}
+
+.bold-floating-logo img {
+  height: 92px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  background: transparent !important;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.09));
+  transition: all 0.35s ease;
+}
+
+.bold-floating-logo:hover {
+  transform: scale(1.15) translateY(-6px) !important;
+}
+
+.bold-floating-logo:hover img {
+  filter: drop-shadow(0 14px 30px rgba(212, 175, 55, 0.7));
+}
+
+/* ─── Downward Content (Evenly Distributed, Balanced Spacing) ─── */
+.slide06-centered-content {
+  text-align: center;
+  max-width: 880px;
+  width: 100%;
+  margin: 30px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.slide06-centered-content .slide-eyebrow {
+  font-size: 0.76rem;
+  letter-spacing: 0.24em;
+  margin-bottom: 16px;
+}
+
+.slide06-centered-content .section-heading {
+  font-size: clamp(2.3rem, 5.2vw, 4.6rem);
+  line-height: 1.08;
+  margin-bottom: 18px;
+  font-weight: 900;
+}
+
+.slide06-centered-content .slide-desc {
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  max-width: 740px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.slide06-centered-content .slide-actions {
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.slide06-trust-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #555;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.slide06-trust-tags span {
+  color: var(--gold-dark);
+}
+
+@media(max-width: 768px) {
+  .slide06-fullwidth-wrapper {
+    padding: 65px 0 20px;
+    min-height: auto;
+  }
+  .bold-floating-logo img {
+    height: 55px;
+    max-width: 140px;
+  }
+  .top-edge-to-edge-stream .stream-single-row {
+    gap: 40px;
+  }
+  .slide06-centered-content {
+    margin-top: 15px;
+  }
+  .slide06-centered-content .section-heading {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    margin-bottom: 12px;
+  }
+  .slide06-centered-content .slide-desc {
+    font-size: 0.88rem;
+    margin-bottom: 20px;
   }
 }

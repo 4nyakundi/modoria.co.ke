@@ -1,22 +1,32 @@
 /**
- * MODORIA - GSAP Observer Full-Screen Slider Controller (6 Slides)
+ * MODORIA - GSAP Observer Curtain Swipe & Parallax Page Reveal Controller
+ * Smoothly swipes up / reveals each section with inverse wrapper masks and counter-parallax
  */
 document.addEventListener('DOMContentLoaded', () => {
-  if (typeof gsap === 'undefined' || typeof Observer === 'undefined') return;
+  if (typeof gsap === 'undefined' || typeof Observer === 'undefined') {
+    console.warn("GSAP or Observer not loaded.");
+    return;
+  }
+
+  gsap.registerPlugin(Observer);
 
   const sections = document.querySelectorAll(".obs-section");
   const images = document.querySelectorAll(".obs-section .bg");
+  const outerWrappers = document.querySelectorAll(".obs-section .outer");
+  const innerWrappers = document.querySelectorAll(".obs-section .inner");
   const dots = document.querySelectorAll(".slide-dot");
   const indexCounter = document.getElementById("slideCurrentIndex");
 
-  if (!sections.length) return;
+  if (!sections.length || !outerWrappers.length || !innerWrappers.length) return;
 
   let currentIndex = -1;
   let animating = false;
   const wrap = gsap.utils.wrap(0, sections.length);
 
+  // Set initial states for counter-slide curtain effect
+  gsap.set(outerWrappers, { yPercent: 100 });
+  gsap.set(innerWrappers, { yPercent: -100 });
   gsap.set(sections, { zIndex: 0, autoAlpha: 0 });
-  gsap.set(sections[0], { zIndex: 1, autoAlpha: 1 });
 
   function updateSlideUI(index) {
     dots.forEach((dot, i) => {
@@ -37,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fromTop = direction === -1;
     const dFactor = fromTop ? -1 : 1;
     const tl = gsap.timeline({
-      defaults: { duration: 1.1, ease: "power2.inOut" },
+      defaults: { duration: 1.25, ease: "power2.inOut" },
       onComplete: () => {
         animating = false;
       }
@@ -50,38 +60,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     gsap.set(sections[index], { autoAlpha: 1, zIndex: 1 });
-    tl.fromTo([sections[index], images[index]], {
+    
+    // Outer and Inner wrappers slide in opposite directions to produce the swipe wipe
+    tl.fromTo([outerWrappers[index], innerWrappers[index]], {
       yPercent: (i) => (i ? -100 * dFactor : 100 * dFactor)
     }, {
       yPercent: 0
-    }, 0);
+    }, 0)
+    .fromTo(images[index], { yPercent: 15 * dFactor }, { yPercent: 0 }, 0);
 
     const fadeEls = sections[index].querySelectorAll(".anim-fade");
     if (fadeEls.length > 0) {
       tl.fromTo(fadeEls, {
-        y: 30 * dFactor,
+        y: 40 * dFactor,
         opacity: 0
       }, {
         y: 0,
         opacity: 1,
         stagger: 0.08,
-        duration: 0.8,
+        duration: 0.85,
         ease: "power3.out"
-      }, "-=0.6");
+      }, 0.25);
     }
 
     currentIndex = index;
     updateSlideUI(currentIndex);
   }
 
-  // Observer Touch & Scroll Detection
+  // Observer Wheel, Touch & Pointer Swipe
   Observer.create({
     type: "wheel,touch,pointer",
     wheelSpeed: -1,
     onDown: () => !animating && gotoSection(currentIndex - 1, -1),
     onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-    tolerance: 15,
-    preventDefault: false
+    tolerance: 10,
+    preventDefault: true
+  });
+
+  // Keyboard navigation support (Arrow Up / Down, Page Up / Down, Space)
+  window.addEventListener('keydown', (e) => {
+    if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
+    if (animating) return;
+
+    if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+      e.preventDefault();
+      gotoSection(currentIndex + 1, 1);
+    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      e.preventDefault();
+      gotoSection(currentIndex - 1, -1);
+    }
   });
 
   // Slide Dot Clicks
@@ -94,5 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Initialize on Slide 0
   gotoSection(0, 1);
 });
