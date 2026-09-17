@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const waServicePills = document.querySelectorAll(".wa-service-pill");
   const waNoteInput = document.getElementById("waNoteInput");
 
-  let selectedService = "Printing & Branding";
+  let selectedService = "Branding & Identity (Ice Cream Logic)";
 
   function openWaModal(preSelectedService) {
     if (preSelectedService) {
@@ -51,15 +51,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (waSendBtn) {
     waSendBtn.addEventListener("click", () => {
-      const customNote = waNoteInput && waNoteInput.value.trim() ? waNoteInput.value.trim() : "I would like to inquire about pricing and lead time.";
-      const message = `Hello Modoria,%0A%0AI would like to inquire about *${selectedService}*.%0A%0ADetails: ${encodeURIComponent(customNote)}%0A%0AThank you!`;
+      const customNote = waNoteInput && waNoteInput.value.trim() ? waNoteInput.value.trim() : "I would like to inquire about specifications, pricing, and project timeline.";
+      const message = `Hello Modoria,%0A%0AI would like to get in touch regarding *${selectedService}*.%0A%0AProject Brief: ${encodeURIComponent(customNote)}%0A%0AThank you!`;
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
       window.open(url, "_blank");
       closeWaModal();
     });
   }
 
-  // Bind any "Inquire Service" buttons across all pages
+  // Bind any "Inquire Service" or "Get in touch" trigger buttons
   document.querySelectorAll("[data-inquire-service]").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -67,6 +67,23 @@ document.addEventListener('DOMContentLoaded', () => {
       openWaModal(sName);
     });
   });
+
+  // Handle Contact Form submission if present
+  const projectBriefForm = document.getElementById("projectBriefForm");
+  if (projectBriefForm) {
+    projectBriefForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("formName")?.value || "";
+      const phone = document.getElementById("formPhone")?.value || "";
+      const email = document.getElementById("formEmail")?.value || "";
+      const service = document.getElementById("formService")?.value || "";
+      const scope = document.getElementById("formScope")?.value || "";
+
+      const formattedMsg = `Hello Modoria,%0A%0ANew Project Inquiry from *${name}* (${phone} / ${email}):%0A%0A*Category:* ${service}%0A*Scope Details:* ${encodeURIComponent(scope)}%0A%0APlease get back to me.`;
+      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${formattedMsg}`;
+      window.open(waUrl, "_blank");
+    });
+  }
 
   // ─── LIGHTBOX MODAL FOR CASE STUDY & IMAGES ───
   const lightboxModal = document.getElementById("lightboxModal");
@@ -96,21 +113,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-}
-  // ─── LIVE NAIROBI STUDIO CLOCK ───
-  function updateNairobiClock() {
-    const timeEl = document.getElementById("footerNairobiTime");
-    if (!timeEl) return;
+
+  // ─── LIVE KENYA STUDIO CLOCK ───
+  function updateKenya CountywideClock() {
+    const timeEls = document.querySelectorAll("#footerStudioTime, .telemetry-clock, .footer-studio-clock");
+    if (!timeEls.length) return;
     try {
       const now = new Date();
-      const options = { timeZone: 'Africa/Nairobi', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+      const options = { timeZone: __IANA_AFRICA_KENYA__, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
       const timeStr = new Intl.DateTimeFormat([], options).format(now);
-      timeEl.textContent = `MOMBASA ${timeStr} EAT • NATIONWIDE ACTIVE`;
+      timeEls.forEach(el => {
+        el.textContent = `KENYA ${timeStr} EAT`;
+      });
     } catch (e) {
       // fallback
     }
   }
-  updateNairobiClock();
-  setInterval(updateNairobiClock, 1000);
+  updateKenya CountywideClock();
+  setInterval(updateKenya CountywideClock, 1000);
 
 });
