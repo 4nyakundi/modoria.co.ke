@@ -115,12 +115,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ─── LIVE KENYA STUDIO CLOCK ───
-  function updateKenya CountywideClock() {
+  function updateKenyaClock() {
     const timeEls = document.querySelectorAll("#footerStudioTime, .telemetry-clock, .footer-studio-clock");
     if (!timeEls.length) return;
     try {
       const now = new Date();
-      const options = { timeZone: __IANA_AFRICA_KENYA__, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+      const options = { timeZone: "Africa/Nairobi", hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
       const timeStr = new Intl.DateTimeFormat([], options).format(now);
       timeEls.forEach(el => {
         el.textContent = `KENYA ${timeStr} EAT`;
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // fallback
     }
   }
-  updateKenya CountywideClock();
-  setInterval(updateKenya CountywideClock, 1000);
+  updateKenyaClock();
+  setInterval(updateKenyaClock, 1000);
 
 });
