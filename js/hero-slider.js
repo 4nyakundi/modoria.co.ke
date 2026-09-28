@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const showcaseColumn = document.querySelector('.hero-showcase-column');
   const zoomBtn = document.getElementById('heroZoomBtn');
 
-  if (!bgSlides.length || !cardSlides.length) return;
+  if (!cardSlides.length) return;
 
   const slidesData = [
     {
@@ -48,10 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (index >= slidesData.length) index = 0;
     currentHeroIndex = index;
 
-    // Update Fullscreen Background Slides
-    bgSlides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
-    });
+    // Update Fullscreen Background Slides (if present)
+    if (bgSlides && bgSlides.length) {
+      bgSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
 
     // Update Foreground Showcase Card Slides
     cardSlides.forEach((slide, i) => {

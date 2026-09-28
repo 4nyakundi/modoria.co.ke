@@ -72,17 +72,20 @@ img {
   display: block;
 }
 
-/* ─── PROMINENT TRIBAL PATTERN BACKGROUND WITH BLUR EFFECT ─── */
+/* ─── REPETITIVE PATTERN BACKGROUND WITH BLUR EFFECT (ALL PAGES) ─── */
 .bg-pattern-watermark {
   position: fixed;
-  inset: 0;
-  background-image: url('../assets/backgrounds/pattern-bg.jpg');
+  inset: -25px;
+  background-image: url('../images/patterns/modoria-pattern.jpg');
   background-repeat: repeat;
-  background-size: 380px auto;
-  opacity: 0.22;
+  background-size: 260px auto;
+  opacity: 0.16;
   pointer-events: none;
   z-index: 0;
-  filter: blur(0.4px) contrast(110%);
+  filter: blur(1.8px) contrast(115%);
+  -webkit-filter: blur(1.8px) contrast(115%);
+  will-change: transform, filter;
+  transform: translate3d(0, 0, 0);
 }
 
 .ambient-glow {
@@ -510,8 +513,9 @@ section.obs-section .bg {
   height: 100%;
   width: 100%;
   top: 0;
-  background-size: cover;
-  background-position: center;
+  background: rgba(253, 253, 252, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   padding: 0 6%;
 }
 
@@ -731,13 +735,16 @@ section.obs-section .bg {
   font-weight: 700;
 }
 
-/* ─── HERO SECTION MULTI-IMAGE BACKGROUND & INTERACTIVE SHOWCASE ─── */
+/* ─── HERO SECTION BACKGROUND & INTERACTIVE SHOWCASE ─── */
 .hero-bg-wrap {
   position: relative !important;
   overflow: hidden !important;
+  background: rgba(253, 253, 252, 0.40) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
 }
 
-/* Fullscreen Layered Background Slider */
+/* Fullscreen Layered Background Slider (Legacy graceful fallback) */
 .hero-bg-slider {
   position: absolute;
   inset: 0;
@@ -757,7 +764,6 @@ section.obs-section .bg {
   transform: scale(1);
   transition: opacity 1.3s cubic-bezier(0.4, 0, 0.2, 1), transform 10s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: opacity, transform;
-  filter: brightness(0.95) saturate(1.1);
 }
 
 .hero-bg-slide.active {
@@ -765,13 +771,13 @@ section.obs-section .bg {
   transform: scale(1.06);
 }
 
-/* Luxury Off-White & Warm Gold Gradient Veil for Peak Legibility */
+/* Luxury Off-White & Warm Gold Ambient Veil */
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: linear-gradient(115deg, rgba(253, 253, 252, 0.94) 0%, rgba(253, 253, 252, 0.82) 46%, rgba(253, 253, 252, 0.42) 78%, rgba(253, 253, 252, 0.72) 100%);
+  background: radial-gradient(circle at 60% 40%, rgba(253, 253, 252, 0.45) 0%, rgba(253, 253, 252, 0.75) 100%);
 }
 
 /* Interactive Hero Showcase Column */
