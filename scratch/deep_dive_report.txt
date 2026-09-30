@@ -1,0 +1,42 @@
+==================================================
+      DEEP DIVE ASSET & PERFORMANCE INSPECTION    
+==================================================
+
+[1] IMAGE ASSET SIZES (> 300 KB):
+  * assets\case-studies\slide_15.png: 23347.3 KB
+  * assets\case-studies\slide_18.png: 8147.4 KB
+  * assets\case-studies\slide_04.png: 7982.9 KB
+  * assets\case-studies\slide_19.png: 6451.5 KB
+  * assets\case-studies\slide_03.png: 5450.8 KB
+  * assets\case-studies\slide_16.png: 4780.9 KB
+  * assets\case-studies\slide_17.png: 3691.8 KB
+  * assets\backgrounds\modoria-pattern.jpg: 584.6 KB
+  * assets\backgrounds\pattern-bg.jpg: 584.6 KB
+  * assets\patterns\modoria-pattern.jpg: 584.6 KB
+  * images\modoria-pattern.jpg: 584.6 KB
+  * images\patterns\modoria-pattern.jpg: 584.6 KB
+  * assets\case-studies\r3_mockup_stationery.jpg: 462.8 KB
+  * assets\case-studies\slide_02.png: 443.8 KB
+  * assets\case-studies\slide_09.png: 415.4 KB
+  * assets\brand\tribal-border.png: 411.1 KB
+  * assets\brand\tribal-border-horizontal.png: 409.7 KB
+  * assets\case-studies\slide_10.png: 341.5 KB
+  * assets\case-studies\slide_11.png: 300.7 KB
+
+[2] FONT PRECONNECT & DISPLAY SWAP:
+  * contact.html: Preconnect: [YES] | display=swap: [YES]
+  * index.html: Preconnect: [YES] | display=swap: [YES]
+  * process.html: Preconnect: [YES] | display=swap: [YES]
+  * services.html: Preconnect: [YES] | display=swap: [YES]
+
+[3] CONTACT & COMMERCE CHANNELS:
+  * contact.html: Email references: {'info@modoria.co.ke', 'name@company.co.ke'} | tel: links: [None]
+  * index.html: Email references: [None] | tel: links: [None]
+  * process.html: Email references: [None] | tel: links: [None]
+  * services.html: Email references: [None] | tel: links: [None]
+
+[4] SCRIPT LOADING (defer/async):
+  * contact.html: 3 external scripts, 3 render-blocking without defer/async
+  * index.html: 6 external scripts, 6 render-blocking without defer/async
+  * process.html: 3 external scripts, 3 render-blocking without defer/async
+  * services.html: 3 external scripts, 3 render-blocking without defer/async

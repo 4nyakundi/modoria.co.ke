@@ -1,0 +1,21 @@
+{
+  "name": "Modoria Limited",
+  "short_name": "Modoria",
+  "description": "Brand Architecture, Precision Printing & Digital Performance Marketing across Kenya Countywide.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDFDFC",
+  "theme_color": "#D4AF37",
+  "icons": [
+    {
+      "src": "assets/brand/modoria-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/brand/modoria-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

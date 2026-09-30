@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://modoria.co.ke/sitemap.xml
