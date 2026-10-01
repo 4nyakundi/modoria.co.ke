@@ -79,11 +79,11 @@ img {
   background-image: url('../images/patterns/modoria-pattern.jpg');
   background-repeat: repeat;
   background-size: 280px auto;
-  opacity: 0.15;
+  opacity: 0.28;
   pointer-events: none;
   z-index: 0;
-  filter: blur(1.5px) contrast(115%);
-  -webkit-filter: blur(1.5px) contrast(115%);
+  filter: blur(0.6px) contrast(120%);
+  -webkit-filter: blur(0.6px) contrast(120%);
   will-change: transform, filter;
   transform: translate3d(0, 0, 0);
 }
@@ -91,7 +91,7 @@ img {
 @media (max-width: 768px) {
   .bg-pattern-watermark {
     background-size: 200px auto;
-    opacity: 0.13;
+    opacity: 0.24;
   }
 }
 
@@ -564,102 +564,115 @@ section.obs-section .bg::before {
 }
 
 /* ══════════════════════════════════════════════════════════
-   THEME 1: WHITE FILL (Slide 01 & Slide 04)
+   THEME 1: WHITE FILL (Slide 01, Slide 04 & Slide 06)
    ══════════════════════════════════════════════════════════ */
 .obs-section.theme-white .bg {
-  background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #FAF8F5 60%, #F4F1EA 100%) !important;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.68) 0%, rgba(250, 248, 245, 0.75) 60%, rgba(244, 241, 234, 0.82) 100%) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .obs-section.theme-white .bg::before {
-  opacity: 0.13;
-  filter: blur(1.5px) contrast(115%);
-  -webkit-filter: blur(1.5px) contrast(115%);
+  opacity: 0.32;
+  filter: blur(0.5px) contrast(120%);
+  -webkit-filter: blur(0.5px) contrast(120%);
 }
 
 .obs-section.theme-white .section-heading {
-  color: #0A0A0A !important;
+  color: #000000 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8) !important;
 }
 
 .obs-section.theme-white .slide-desc {
-  color: #4B5563 !important;
+  color: #111827 !important;
+  font-weight: 550 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6) !important;
 }
 
 .obs-section.theme-white .slide-eyebrow {
-  color: var(--gold-dark) !important;
-  background: rgba(212, 175, 55, 0.08) !important;
-  border-color: rgba(212, 175, 55, 0.25) !important;
+  color: #8A6D05 !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
 }
 
 .obs-section.theme-white .btn-gold {
   background: var(--gold-gradient) !important;
   color: #0A0A0A !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3) !important;
 }
 
 .obs-section.theme-white .btn-outline {
-  border-color: rgba(10, 10, 10, 0.3) !important;
+  border-color: rgba(10, 10, 10, 0.45) !important;
   color: #0A0A0A !important;
-  background: rgba(255, 255, 255, 0.7) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 700 !important;
 }
 
 .obs-section.theme-white .slide-visual-card {
-  background: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(212, 175, 55, 0.3) !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1) !important;
 }
 
 .obs-section.theme-white .slide06-centralised-wrapper .centralised-logo-stream {
-  background: rgba(0, 0, 0, 0.02) !important;
-  border: 1px solid rgba(212, 175, 55, 0.2) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04) !important;
+  background: rgba(255, 255, 255, 0.65) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06) !important;
 }
 
 .obs-section.theme-white .bold-floating-logo {
   background: #FFFFFF !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
 .obs-section.theme-white .slide06-trust-tags div {
-  background: rgba(255, 255, 255, 0.85) !important;
-  color: #374151 !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #111827 !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
 }
 
 /* ══════════════════════════════════════════════════════════
    THEME 2: GOLD FILL (Slide 02 & Slide 05)
    ══════════════════════════════════════════════════════════ */
 .obs-section.theme-gold .bg {
-  background: linear-gradient(135deg, #D4AF37 0%, #C59B27 45%, #E5C158 100%) !important;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.72) 0%, rgba(197, 155, 39, 0.68) 45%, rgba(229, 193, 88, 0.76) 100%) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .obs-section.theme-gold .bg::before {
-  opacity: 0.20;
-  filter: blur(1.5px) contrast(125%);
-  -webkit-filter: blur(1.5px) contrast(125%);
+  opacity: 0.38;
+  filter: blur(0.5px) contrast(130%);
+  -webkit-filter: blur(0.5px) contrast(130%);
   mix-blend-mode: multiply;
 }
 
 .obs-section.theme-gold .section-heading {
-  color: #0A0A0A !important;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+  color: #000000 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4) !important;
 }
 
 .obs-section.theme-gold .section-heading .gold-text {
   background: none !important;
   -webkit-text-fill-color: #FFFFFF !important;
   color: #FFFFFF !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45) !important;
 }
 
 .obs-section.theme-gold .slide-desc {
-  color: #1A1A1A !important;
-  font-weight: 500 !important;
+  color: #0A0A0A !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4) !important;
 }
 
 .obs-section.theme-gold .slide-eyebrow {
   color: #000000 !important;
-  background: rgba(255, 255, 255, 0.4) !important;
-  border-color: rgba(0, 0, 0, 0.25) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
   font-weight: 800 !important;
 }
 
@@ -667,7 +680,7 @@ section.obs-section .bg::before {
   background: #0A0A0A !important;
   color: #FFFFFF !important;
   border-color: #0A0A0A !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
 }
 
 .obs-section.theme-gold .btn-gold:hover {
@@ -678,8 +691,8 @@ section.obs-section .bg::before {
 .obs-section.theme-gold .btn-outline {
   border-color: #0A0A0A !important;
   color: #0A0A0A !important;
-  background: rgba(255, 255, 255, 0.45) !important;
-  font-weight: 600 !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  font-weight: 700 !important;
 }
 
 .obs-section.theme-gold .btn-outline:hover {
@@ -688,22 +701,24 @@ section.obs-section .bg::before {
 }
 
 .obs-section.theme-gold .slide-visual-card {
-  background: rgba(255, 255, 255, 0.92) !important;
-  border-color: rgba(0, 0, 0, 0.15) !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25) !important;
 }
 
 /* ══════════════════════════════════════════════════════════
-   THEME 3: BLACK FILL (Slide 03 & Slide 06)
+   THEME 3: BLACK FILL (Slide 03)
    ══════════════════════════════════════════════════════════ */
 .obs-section.theme-black .bg {
-  background: radial-gradient(circle at 60% 40%, #161618 0%, #0C0C0E 50%, #050505 100%) !important;
+  background: radial-gradient(circle at 60% 40%, rgba(18, 18, 20, 0.75) 0%, rgba(10, 10, 12, 0.80) 50%, rgba(5, 5, 5, 0.86) 100%) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .obs-section.theme-black .bg::before {
-  opacity: 0.13;
-  filter: blur(1.5px) contrast(130%) invert(1);
-  -webkit-filter: blur(1.5px) contrast(130%) invert(1);
+  opacity: 0.28;
+  filter: blur(0.5px) contrast(135%) invert(1);
+  -webkit-filter: blur(0.5px) contrast(135%) invert(1);
 }
 
 .obs-section.theme-black .section-heading {
@@ -717,25 +732,26 @@ section.obs-section .bg::before {
 }
 
 .obs-section.theme-black .slide-desc {
-  color: #E2E8F0 !important;
+  color: #F1F5F9 !important;
+  font-weight: 500 !important;
 }
 
 .obs-section.theme-black .slide-eyebrow {
   color: var(--gold) !important;
-  background: rgba(212, 175, 55, 0.12) !important;
-  border-color: rgba(212, 175, 55, 0.35) !important;
+  background: rgba(212, 175, 55, 0.15) !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
 }
 
 .obs-section.theme-black .btn-gold {
   background: var(--gold-gradient) !important;
   color: #0A0A0A !important;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3) !important;
 }
 
 .obs-section.theme-black .btn-outline {
-  border-color: rgba(255, 255, 255, 0.35) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
   color: #FFFFFF !important;
-  background: rgba(255, 255, 255, 0.06) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .obs-section.theme-black .btn-outline:hover {
@@ -744,8 +760,8 @@ section.obs-section .bg::before {
 }
 
 .obs-section.theme-black .slide-visual-card {
-  background: rgba(20, 20, 22, 0.85) !important;
-  border-color: rgba(212, 175, 55, 0.35) !important;
+  background: rgba(20, 20, 22, 0.88) !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7) !important;
 }
 

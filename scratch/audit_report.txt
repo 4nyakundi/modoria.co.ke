@@ -9,7 +9,7 @@
     - Meta Description: [YES]
     - Charset & Viewport: [YES]
     - Favicon Link: [YES]
-    - OpenGraph (Title/Image): [Incomplete OG tags]
+    - OpenGraph (Title/Image): [YES]
     - Canonical Link: [YES]
 
   * File: contact.html
