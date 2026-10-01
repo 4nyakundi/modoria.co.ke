@@ -75,17 +75,24 @@ img {
 /* ─── REPETITIVE PATTERN BACKGROUND WITH BLUR EFFECT (ALL PAGES) ─── */
 .bg-pattern-watermark {
   position: fixed;
-  inset: -25px;
+  inset: -30px;
   background-image: url('../images/patterns/modoria-pattern.jpg');
   background-repeat: repeat;
-  background-size: 260px auto;
-  opacity: 0.16;
+  background-size: 280px auto;
+  opacity: 0.15;
   pointer-events: none;
   z-index: 0;
-  filter: blur(1.8px) contrast(115%);
-  -webkit-filter: blur(1.8px) contrast(115%);
+  filter: blur(1.5px) contrast(115%);
+  -webkit-filter: blur(1.5px) contrast(115%);
   will-change: transform, filter;
   transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .bg-pattern-watermark {
+    background-size: 200px auto;
+    opacity: 0.13;
+  }
 }
 
 .ambient-glow {
@@ -480,12 +487,14 @@ img {
   font-weight: 700;
 }
 
-/* ─── FULLSCREEN GSAP OBSERVER SLIDER (HOME PAGE - WHITE LUXURY) ─── */
+/* ─── FULLSCREEN GSAP OBSERVER SLIDER (EDGY LUXURY BOX SCROLLER) ─── */
 .observer-container {
   height: 100vh;
   width: 100vw;
   position: relative;
   overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 section.obs-section {
@@ -497,21 +506,33 @@ section.obs-section {
   visibility: hidden;
   z-index: 1;
   overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
   will-change: transform, opacity, visibility;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
 }
 
-section.obs-section .outer,
-section.obs-section .inner {
+section.obs-section .outer {
   width: 100%;
   height: 100%;
-  overflow-y: hidden;
-  will-change: transform;
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1.5px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+  will-change: transform, opacity;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
+}
+
+section.obs-section .inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 section.obs-section .bg {
@@ -519,16 +540,259 @@ section.obs-section .bg {
   align-items: center;
   justify-content: center;
   position: absolute;
-  height: 100%;
+  inset: 0;
   width: 100%;
-  top: 0;
-  background: rgba(253, 253, 252, 0.45);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  height: 100%;
   padding: 0 6%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
+  overflow: hidden;
+}
+
+/* Individual Slide Pattern Watermark Layer */
+section.obs-section .bg::before {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  background-image: url('../images/patterns/modoria-pattern.jpg');
+  background-repeat: repeat;
+  background-size: 280px auto;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* ══════════════════════════════════════════════════════════
+   THEME 1: WHITE FILL (Slide 01 & Slide 04)
+   ══════════════════════════════════════════════════════════ */
+.obs-section.theme-white .bg {
+  background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #FAF8F5 60%, #F4F1EA 100%) !important;
+}
+
+.obs-section.theme-white .bg::before {
+  opacity: 0.13;
+  filter: blur(1.5px) contrast(115%);
+  -webkit-filter: blur(1.5px) contrast(115%);
+}
+
+.obs-section.theme-white .section-heading {
+  color: #0A0A0A !important;
+}
+
+.obs-section.theme-white .slide-desc {
+  color: #4B5563 !important;
+}
+
+.obs-section.theme-white .slide-eyebrow {
+  color: var(--gold-dark) !important;
+  background: rgba(212, 175, 55, 0.08) !important;
+  border-color: rgba(212, 175, 55, 0.25) !important;
+}
+
+.obs-section.theme-white .btn-gold {
+  background: var(--gold-gradient) !important;
+  color: #0A0A0A !important;
+}
+
+.obs-section.theme-white .btn-outline {
+  border-color: rgba(10, 10, 10, 0.3) !important;
+  color: #0A0A0A !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+.obs-section.theme-white .slide-visual-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06) !important;
+}
+
+.obs-section.theme-white .slide06-centralised-wrapper .centralised-logo-stream {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+.obs-section.theme-white .bold-floating-logo {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.obs-section.theme-white .slide06-trust-tags div {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #374151 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   THEME 2: GOLD FILL (Slide 02 & Slide 05)
+   ══════════════════════════════════════════════════════════ */
+.obs-section.theme-gold .bg {
+  background: linear-gradient(135deg, #D4AF37 0%, #C59B27 45%, #E5C158 100%) !important;
+}
+
+.obs-section.theme-gold .bg::before {
+  opacity: 0.20;
+  filter: blur(1.5px) contrast(125%);
+  -webkit-filter: blur(1.5px) contrast(125%);
+  mix-blend-mode: multiply;
+}
+
+.obs-section.theme-gold .section-heading {
+  color: #0A0A0A !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+}
+
+.obs-section.theme-gold .section-heading .gold-text {
+  background: none !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
+}
+
+.obs-section.theme-gold .slide-desc {
+  color: #1A1A1A !important;
+  font-weight: 500 !important;
+}
+
+.obs-section.theme-gold .slide-eyebrow {
+  color: #000000 !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+  font-weight: 800 !important;
+}
+
+.obs-section.theme-gold .btn-gold {
+  background: #0A0A0A !important;
+  color: #FFFFFF !important;
+  border-color: #0A0A0A !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+.obs-section.theme-gold .btn-gold:hover {
+  background: #FFFFFF !important;
+  color: #0A0A0A !important;
+}
+
+.obs-section.theme-gold .btn-outline {
+  border-color: #0A0A0A !important;
+  color: #0A0A0A !important;
+  background: rgba(255, 255, 255, 0.45) !important;
+  font-weight: 600 !important;
+}
+
+.obs-section.theme-gold .btn-outline:hover {
+  background: #0A0A0A !important;
+  color: #FFFFFF !important;
+}
+
+.obs-section.theme-gold .slide-visual-card {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   THEME 3: BLACK FILL (Slide 03 & Slide 06)
+   ══════════════════════════════════════════════════════════ */
+.obs-section.theme-black .bg {
+  background: radial-gradient(circle at 60% 40%, #161618 0%, #0C0C0E 50%, #050505 100%) !important;
+}
+
+.obs-section.theme-black .bg::before {
+  opacity: 0.13;
+  filter: blur(1.5px) contrast(130%) invert(1);
+  -webkit-filter: blur(1.5px) contrast(130%) invert(1);
+}
+
+.obs-section.theme-black .section-heading {
+  color: #FFFFFF !important;
+}
+
+.obs-section.theme-black .section-heading .gold-text {
+  background: var(--gold-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.obs-section.theme-black .slide-desc {
+  color: #E2E8F0 !important;
+}
+
+.obs-section.theme-black .slide-eyebrow {
+  color: var(--gold) !important;
+  background: rgba(212, 175, 55, 0.12) !important;
+  border-color: rgba(212, 175, 55, 0.35) !important;
+}
+
+.obs-section.theme-black .btn-gold {
+  background: var(--gold-gradient) !important;
+  color: #0A0A0A !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25) !important;
+}
+
+.obs-section.theme-black .btn-outline {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.obs-section.theme-black .btn-outline:hover {
+  background: #FFFFFF !important;
+  color: #0A0A0A !important;
+}
+
+.obs-section.theme-black .slide-visual-card {
+  background: rgba(20, 20, 22, 0.85) !important;
+  border-color: rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7) !important;
+}
+
+.obs-section.theme-black .slide06-centralised-wrapper .centralised-logo-stream {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.obs-section.theme-black .bold-floating-logo {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
+}
+
+.obs-section.theme-black .slide06-trust-tags .trust-tag {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #E2E8F0 !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Adaptive High-Contrast Slide Navigation UI (Dots & Index Counter) */
+.slide-nav-controls {
+  background: rgba(10, 10, 10, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  padding: 8px 14px !important;
+  border-radius: 30px !important;
+}
+
+.slide-dot {
+  background: rgba(255, 255, 255, 0.45) !important;
+}
+
+.slide-dot.active {
+  background: #D4AF37 !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8) !important;
+}
+
+.slide-index-counter {
+  background: rgba(10, 10, 10, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  color: #FFFFFF !important;
+  padding: 6px 16px !important;
+  border-radius: 20px !important;
 }
 
 .slide-content-wrap {

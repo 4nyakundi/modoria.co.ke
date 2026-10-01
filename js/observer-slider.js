@@ -1,6 +1,6 @@
 /**
- * MODORIA - GSAP Observer Curtain Swipe & Seamless Page Reveal Controller
- * Ultra-smooth, glitch-free slide transitions with synchronized hardware-accelerated transforms
+ * MODORIA - GSAP Observer Edgy Card/Box Scroller
+ * Full-page box placeholders and typography glide synchronously with 3D scale and lockstep velocity
  */
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof gsap === 'undefined' || typeof Observer === 'undefined') {
@@ -12,28 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const sections = document.querySelectorAll(".obs-section");
   const outerWrappers = document.querySelectorAll(".obs-section .outer");
-  const innerWrappers = document.querySelectorAll(".obs-section .inner");
   const dots = document.querySelectorAll(".slide-dot");
   const indexCounter = document.getElementById("slideCurrentIndex");
 
-  if (!sections.length || !outerWrappers.length || !innerWrappers.length) return;
+  if (!sections.length || !outerWrappers.length) return;
 
   let currentIndex = 0;
   let animating = false;
   let lastSlideTime = 0;
   const wrap = gsap.utils.wrap(0, sections.length);
 
-  // ─── INITIALIZE SLIDER IN CRISP ZERO-GLITCH STATE ───
+  // ─── INITIALIZE SLIDER IN CRISP EDGY BOX STATE ───
   function initSlider() {
     sections.forEach((section, i) => {
       if (i === 0) {
         gsap.set(section, { autoAlpha: 1, zIndex: 2 });
-        gsap.set(outerWrappers[i], { yPercent: 0, clearProps: "transform" });
-        gsap.set(innerWrappers[i], { yPercent: 0, clearProps: "transform" });
+        gsap.set(outerWrappers[i], { yPercent: 0, scale: 1, opacity: 1 });
       } else {
         gsap.set(section, { autoAlpha: 0, zIndex: 0 });
-        gsap.set(outerWrappers[i], { yPercent: 100 });
-        gsap.set(innerWrappers[i], { yPercent: -100 });
+        gsap.set(outerWrappers[i], { yPercent: 100, scale: 0.94, opacity: 0.85 });
       }
     });
 
@@ -56,70 +53,59 @@ document.addEventListener('DOMContentLoaded', () => {
     index = wrap(index);
     const now = Date.now();
     
-    // Prevent mid-animation trigger or rapid inertial scroll bounce
-    if (index === currentIndex || animating || (now - lastSlideTime < 450)) return;
+    // Prevent double triggers during active animation or rapid inertial flick
+    if (index === currentIndex || animating || (now - lastSlideTime < 380)) return;
     
     animating = true;
     const prevIndex = currentIndex;
     const dFactor = direction === -1 ? -1 : 1;
 
-    // Set incoming section above outgoing section
+    // Incoming section sits above outgoing section
     gsap.set(sections[index], { autoAlpha: 1, zIndex: 2 });
     gsap.set(sections[prevIndex], { zIndex: 1 });
 
-    // Pre-position incoming curtain wrappers without visual jump
-    gsap.set(outerWrappers[index], { yPercent: 100 * dFactor });
-    gsap.set(innerWrappers[index], { yPercent: -100 * dFactor });
-
     const tl = gsap.timeline({
-      defaults: { duration: 0.9, ease: "power2.out" },
+      defaults: { duration: 0.9, ease: "power3.out" },
       onComplete: () => {
-        // Clean up outgoing slide to avoid dirty transforms
+        // Cleanly hide previous slide
         gsap.set(sections[prevIndex], { autoAlpha: 0, zIndex: 0 });
-        gsap.set(outerWrappers[prevIndex], { yPercent: 100 });
-        gsap.set(innerWrappers[prevIndex], { yPercent: -100 });
+        gsap.set(outerWrappers[prevIndex], { yPercent: 100, scale: 0.94, opacity: 0.85 });
         
-        // Lock clean position on active slide
-        gsap.set(outerWrappers[index], { yPercent: 0 });
-        gsap.set(innerWrappers[index], { yPercent: 0 });
+        // Lock clean zero position on active slide
+        gsap.set(outerWrappers[index], { yPercent: 0, scale: 1, opacity: 1 });
 
         animating = false;
         lastSlideTime = Date.now();
       }
     });
 
-    // 1. Synchronized Curtain Wipe Movement
-    tl.to(outerWrappers[index], { yPercent: 0 }, 0)
-      .to(innerWrappers[index], { yPercent: 0 }, 0);
-
-    // 2. Subtle Soft Parallax on Outgoing Slide
-    tl.to(outerWrappers[prevIndex], {
-      yPercent: -20 * dFactor,
+    // 1. Incoming Box & Text Move In Lockstep with Edgy Scale Effect
+    tl.fromTo(outerWrappers[index], {
+      yPercent: 100 * dFactor,
+      scale: 0.94,
+      opacity: 0.85
+    }, {
+      yPercent: 0,
+      scale: 1,
+      opacity: 1,
       duration: 0.9,
-      ease: "power2.out"
+      ease: "power3.out"
     }, 0);
 
-    // 3. Staggered Content Inflow on Incoming Slide
-    const fadeEls = sections[index].querySelectorAll(".anim-fade");
-    if (fadeEls.length > 0) {
-      tl.fromTo(fadeEls, {
-        y: 28 * dFactor,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1,
-        stagger: 0.05,
-        duration: 0.7,
-        ease: "power3.out"
-      }, 0.15);
-    }
+    // 2. Outgoing Box & Text Glide Out Smoothly
+    tl.to(outerWrappers[prevIndex], {
+      yPercent: -100 * dFactor,
+      scale: 0.94,
+      opacity: 0.35,
+      duration: 0.9,
+      ease: "power3.out"
+    }, 0);
 
     currentIndex = index;
     updateSlideUI(currentIndex);
   }
 
   // ─── OBSERVER INPUT CAPTURE (WHEEL & TOUCH) ───
-  // Uses wheel and touch (excluding raw pointer to prevent mouse drag collision)
   Observer.create({
     type: "wheel,touch",
     wheelSpeed: -1,
