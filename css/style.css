@@ -19,8 +19,7 @@
   --gold-vivid: #d4af37;
   --gold-light: #fae48f;
   --gold-dark: #8c6a0e;
-  --gold-gradient: linear-gradient(135deg, #c59b27 0%, #d4af37 40%, #9e7813 85%, #7a5707 100%);
-  --gold-rich: linear-gradient(135deg, #b8860b 0%, #d4af37 35%, #9e7813 75%, #7a5707 100%);
+  --gold-gradient: linear-gradient(135deg, #f7df83 0%, #d4af37 50%, #9e7813 100%);
   --gold-glass: rgba(212, 175, 55, 0.12);
   --gold-border: rgba(197, 155, 39, 0.35);
   --teal-r3: #026e85;
@@ -73,18 +72,18 @@ img {
   display: block;
 }
 
-/* ─── REPETITIVE PATTERN BACKGROUND WITH HEAVY FROSTED BLUR EFFECT (ALL PAGES) ─── */
+/* ─── REPETITIVE PATTERN BACKGROUND WITH BLUR EFFECT (ALL PAGES) ─── */
 .bg-pattern-watermark {
   position: fixed;
-  inset: -40px;
+  inset: -30px;
   background-image: url('../images/patterns/modoria-pattern.jpg');
   background-repeat: repeat;
   background-size: 280px auto;
-  opacity: 0.09;
+  opacity: 0.15;
   pointer-events: none;
   z-index: 0;
-  filter: blur(5.5px) contrast(105%);
-  -webkit-filter: blur(5.5px) contrast(105%);
+  filter: blur(1.5px) contrast(115%);
+  -webkit-filter: blur(1.5px) contrast(115%);
   will-change: transform, filter;
   transform: translate3d(0, 0, 0);
 }
@@ -92,9 +91,7 @@ img {
 @media (max-width: 768px) {
   .bg-pattern-watermark {
     background-size: 200px auto;
-    opacity: 0.08;
-    filter: blur(4.5px) contrast(105%);
-    -webkit-filter: blur(4.5px) contrast(105%);
+    opacity: 0.13;
   }
 }
 
@@ -553,49 +550,38 @@ section.obs-section .bg {
   overflow: hidden;
 }
 
-/* Individual Slide Pattern Watermark Layer with Heavy Frosted Blur */
+/* Individual Slide Pattern Watermark Layer */
 section.obs-section .bg::before {
   content: '';
   position: absolute;
-  inset: -50px;
+  inset: -30px;
   background-image: url('../images/patterns/modoria-pattern.jpg');
   background-repeat: repeat;
   background-size: 280px auto;
   pointer-events: none;
   z-index: 1;
   transition: opacity 0.5s ease;
-  will-change: transform, filter;
-  transform: translate3d(0, 0, 0);
 }
 
 /* ══════════════════════════════════════════════════════════
-   THEME 1: WHITE FILL (Slide 01, Slide 04, Slide 06)
+   THEME 1: WHITE FILL (Slide 01 & Slide 04)
    ══════════════════════════════════════════════════════════ */
 .obs-section.theme-white .bg {
   background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #FAF8F5 60%, #F4F1EA 100%) !important;
 }
 
 .obs-section.theme-white .bg::before {
-  opacity: 0.08;
-  filter: blur(6px) contrast(105%);
-  -webkit-filter: blur(6px) contrast(105%);
+  opacity: 0.13;
+  filter: blur(1.5px) contrast(115%);
+  -webkit-filter: blur(1.5px) contrast(115%);
 }
 
 .obs-section.theme-white .section-heading {
   color: #0A0A0A !important;
 }
 
-.obs-section.theme-white .section-heading .gold-text {
-  color: #B8860B !important;
-  background: linear-gradient(135deg, #9E7813 0%, #D4AF37 35%, #B8860B 75%, #7A5707 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  display: inline-block !important;
-  font-weight: 900 !important;
-}
-
 .obs-section.theme-white .slide-desc {
-  color: #374151 !important;
+  color: #4B5563 !important;
 }
 
 .obs-section.theme-white .slide-eyebrow {
@@ -640,40 +626,6 @@ section.obs-section .bg::before {
 }
 
 /* ══════════════════════════════════════════════════════════
-   HERO PAGE (SLIDE 01) HIGH-READABILITY ENHANCEMENTS
-   ══════════════════════════════════════════════════════════ */
-.obs-section.first .section-heading {
-  color: #050505 !important;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
-  letter-spacing: -0.035em;
-}
-
-.obs-section.first .section-heading .gold-text {
-  color: #B8860B !important;
-  background: linear-gradient(135deg, #9E7813 0%, #D4AF37 35%, #B8860B 75%, #7A5707 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  display: inline-block !important;
-  font-weight: 900 !important;
-  filter: drop-shadow(0 1px 1px rgba(122, 87, 7, 0.25));
-}
-
-.obs-section.first .slide-desc {
-  color: #1F2937 !important;
-  font-weight: 500 !important;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
-}
-
-.obs-section.first .slide-eyebrow {
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  border: 1px solid rgba(212, 175, 55, 0.35) !important;
-  color: #0A0A0A !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-/* ══════════════════════════════════════════════════════════
    THEME 2: GOLD FILL (Slide 02 & Slide 05)
    ══════════════════════════════════════════════════════════ */
 .obs-section.theme-gold .bg {
@@ -681,9 +633,9 @@ section.obs-section .bg::before {
 }
 
 .obs-section.theme-gold .bg::before {
-  opacity: 0.12;
-  filter: blur(6px) contrast(110%);
-  -webkit-filter: blur(6px) contrast(110%);
+  opacity: 0.20;
+  filter: blur(1.5px) contrast(125%);
+  -webkit-filter: blur(1.5px) contrast(125%);
   mix-blend-mode: multiply;
 }
 
@@ -742,16 +694,16 @@ section.obs-section .bg::before {
 }
 
 /* ══════════════════════════════════════════════════════════
-   THEME 3: BLACK FILL (Slide 03)
+   THEME 3: BLACK FILL (Slide 03 & Slide 06)
    ══════════════════════════════════════════════════════════ */
 .obs-section.theme-black .bg {
   background: radial-gradient(circle at 60% 40%, #161618 0%, #0C0C0E 50%, #050505 100%) !important;
 }
 
 .obs-section.theme-black .bg::before {
-  opacity: 0.08;
-  filter: blur(6px) contrast(110%) invert(1);
-  -webkit-filter: blur(6px) contrast(110%) invert(1);
+  opacity: 0.13;
+  filter: blur(1.5px) contrast(130%) invert(1);
+  -webkit-filter: blur(1.5px) contrast(130%) invert(1);
 }
 
 .obs-section.theme-black .section-heading {
