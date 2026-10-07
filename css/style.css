@@ -3069,26 +3069,145 @@ footer.editorial-footer-elevated {
   gap: 14px;
 }
 
-.social-icon-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+/* ─── TRI-COLOR BRAND SOCIAL ICONS (WHITE, BLACK, GOLD) ─── */
+.topbar-left {
   display: flex;
   align-items: center;
+  gap: 16px;
+  z-index: 310;
+}
+
+.topbar-emblem-icon {
+  height: 28px !important;
+  width: 28px !important;
+  object-fit: contain !important;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: #0A0A0A;
+  padding: 1px;
+}
+
+.topbar-logo-text {
+  height: 24px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+.topbar-socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 14px;
+  border-left: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.social-icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #0A0A0A;
+  border: 1.5px solid #D4AF37;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  color: #080808;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #FFFFFF;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.social-icon-btn svg {
+  color: #FFFFFF;
+  transition: all 0.25s ease;
 }
 
 .social-icon-btn:hover {
-  background: #000000;
-  color: #ffffff;
-  border-color: #000000;
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #F8ECC2 0%, #D4AF37 50%, #B89020 100%);
+  color: #0A0A0A;
+  border-color: #FFFFFF;
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.5);
+}
+
+.social-icon-btn:hover svg {
+  color: #0A0A0A;
+}
+
+.social-icon-btn:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* Nav Drawer Tri-Color Social Links */
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.nav-socials li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 100px;
+  background: #0A0A0A;
+  border: 1.5px solid #D4AF37;
+  color: #FFFFFF;
+  font-family: var(--font-futura, var(--font-mono), sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease;
+}
+
+.nav-socials li a svg {
+  color: #FFFFFF;
+  flex-shrink: 0;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-socials li a:hover {
+  background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 50%, #B89020 100%);
+  color: #0A0A0A;
+  border-color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.45);
+  transform: translateY(-2px);
+}
+
+.nav-socials li a:hover svg {
+  color: #0A0A0A;
+  transform: scale(1.1);
+}
+
+/* Footer & Section Social Clusters */
+.footer-social-cluster {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.minimal-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Responsive: gracefully collapse topbar social buttons on mobile */
+@media (max-width: 900px) {
+  .topbar-socials {
+    display: none !important;
+  }
 }
 
 
