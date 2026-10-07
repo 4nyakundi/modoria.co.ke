@@ -701,9 +701,9 @@ section.obs-section .bg::before {
 }
 
 .obs-section.theme-black .bg::before {
-  opacity: 0.13;
-  filter: blur(1.5px) contrast(130%) invert(1);
-  -webkit-filter: blur(1.5px) contrast(130%) invert(1);
+  opacity: 0.03;
+  filter: blur(2.5px) contrast(115%);
+  -webkit-filter: blur(2.5px) contrast(115%);
 }
 
 .obs-section.theme-black .section-heading {
