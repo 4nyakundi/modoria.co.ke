@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found (404) | MODORIA Kenya</title>
   <meta name="description" content="The page you requested could not be located. Return to Modoria Limited Home or connect directly with our Kenya Countywide Concierge.">
-  <link rel="canonical" href="https://modoria.co.ke/404.html">
-  <link rel="icon" type="image/png" href="assets/brand/modoria-logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#D4AF37">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -100,20 +104,22 @@
       </div>
     </div>
 
-    <div class="nav-bottom nav-panel" id="navBottom">
-      <div class="nav-bottom-item">
-        <div class="nav-bottom-title">All 47 Counties</div>
-        <div class="nav-bottom-desc">Rapid nationwide freight dispatch across Kenya.</div>
-      </div>
-      <div class="nav-bottom-item">
-        <div class="nav-bottom-title">Artisanal Strategy</div>
-        <div class="nav-bottom-desc">Vector-exact branding &amp; 8 production manufacturing lines.</div>
+    <div class="nav-bottom nav-border nav-panel" id="navBottom">
+      <ul class="nav-socials">
+        <li><a href="https://www.instagram.com/modoria.ke?stkn=MXN6cDlkdDVsbmNkbQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://x.com/modoria_ke?s=11" target="_blank" rel="noopener">X / Twitter</a></li>
+        <li><a href="https://www.tiktok.com/@modoria.ke?_r=1&amp;_t=ZS-99YtKK3ql3F" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="https://www.facebook.com/share/19QXa8VBAV/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+      <div class="nav-asset-badge">
+        <span>+254 707 816 111</span>
       </div>
     </div>
   </div>
 
   <main style="min-height: 75vh; display: flex; align-items: center; justify-content: center; padding: 120px 24px 60px;">
     <div style="max-width: 680px; width: 100%; text-align: center; background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px; padding: 60px 32px; box-shadow: 0 24px 60px rgba(0,0,0,0.06);">
+      <img src="assets/brand/modoria-emblem.png" alt="Modoria Emblem" style="width: 68px; height: 68px; margin: 0 auto 20px; display: block; object-fit: contain;">
       <div style="font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.25em; color: var(--gold-dark); font-weight: 700; margin-bottom: 14px;">
         ERROR 404 // ROUTE NOT FOUND
       </div>
@@ -132,9 +138,26 @@
   </main>
 
   <footer class="minimal-footer">
-    <div class="minimal-footer-brand">MODORIA</div>
-    <div class="minimal-footer-tagline">BRANDING &bull; PRINTING &bull; MARKETING &bull; KENYA COUNTYWIDE</div>
-    <div class="minimal-footer-copy">&copy; 2026 Modoria Limited. All Rights Reserved.</div>
+    <div class="minimal-footer-container">
+      <div class="minimal-footer-top" style="justify-content: center; text-align: center;">
+        <div class="minimal-footer-brand" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <a href="index.html" class="minimal-footer-logo" aria-label="Modoria Home" style="display: flex; align-items: center; gap: 12px;">
+            <img src="assets/brand/modoria-emblem.png" alt="Modoria Emblem" style="height: 32px; width: 32px; object-fit: contain;">
+            <img src="assets/brand/modoria-logo.png" alt="Modoria Brand">
+          </a>
+          <p class="minimal-footer-tagline">
+            Branding &bull; Precision Printing &bull; Performance Marketing.<br>
+            <span>Kenya Countywide Dispatch</span>
+          </p>
+        </div>
+      </div>
+      <div class="minimal-footer-divider"></div>
+      <div class="minimal-footer-bottom" style="justify-content: center;">
+        <div class="minimal-copyright">
+          &copy; 2026 MODORIA LIMITED. All rights reserved.
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script src="js/gsap.min.js" defer></script>
