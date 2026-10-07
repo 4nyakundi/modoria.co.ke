@@ -79,11 +79,11 @@ img {
   background-image: url('../images/patterns/modoria-pattern.jpg');
   background-repeat: repeat;
   background-size: 280px auto;
-  opacity: 0.15;
+  opacity: 0.25;
   pointer-events: none;
   z-index: 0;
-  filter: blur(1.5px) contrast(115%);
-  -webkit-filter: blur(1.5px) contrast(115%);
+  filter: blur(4.5px) contrast(145%);
+  -webkit-filter: blur(4.5px) contrast(145%);
   will-change: transform, filter;
   transform: translate3d(0, 0, 0);
 }
@@ -571,9 +571,9 @@ section.obs-section .bg::before {
 }
 
 .obs-section.theme-white .bg::before {
-  opacity: 0.13;
-  filter: blur(1.5px) contrast(115%);
-  -webkit-filter: blur(1.5px) contrast(115%);
+  opacity: 0.03;
+  filter: blur(2.5px) contrast(115%);
+  -webkit-filter: blur(2.5px) contrast(115%);
 }
 
 .obs-section.theme-white .section-heading {
@@ -633,9 +633,9 @@ section.obs-section .bg::before {
 }
 
 .obs-section.theme-gold .bg::before {
-  opacity: 0.20;
-  filter: blur(1.5px) contrast(125%);
-  -webkit-filter: blur(1.5px) contrast(125%);
+   opacity: 0.03;
+  filter: blur(2.5px) contrast(115%);
+  -webkit-filter: blur(2.5px) contrast(115%);
   mix-blend-mode: multiply;
 }
 
